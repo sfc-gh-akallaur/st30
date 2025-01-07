@@ -2,7 +2,7 @@
 
 <img src='3AF34648-C61D-47CE-9E56-C496C5A7C240.jpeg' height=250>
 
-This is the official repo of `#30DaysOfStreamlit` — a 30-day social challenge for you to learn, build and deploy [Streamlit](https://streamlit.io) apps.
+`#30DaysOfStreamlit` — a 30-day social challenge for you to learn, build and deploy [Streamlit](https://streamlit.io) apps.
 
 ## How to participate
 
@@ -20,7 +20,7 @@ Find out more about the specific challenges by participating! The 30-day challen
 
 | Beginner (Days 1-7) | Intermediate (Days 8-23) | Advanced (Days 24-30) |
 | :---        |    :----   |          :--- |
-| Set up your local and cloud coding environments, install Streamlit, and build your first Streamlit app.| Learn about a new [Streamlit command](https://docs.streamlit.io/library/api-reference) each day and use it to create and deploy a simple Streamlit app. | Learn about important topics such as session state, efficient data and memory management via caching, complex layouts, and much more.
+| Set up your local and cloud coding environments, install Streamlit, and build your first Streamlit app.| Learn about a new [Streamlit command](https://docs.streamlit.io/library/api-reference) each day and use it to create and deploy a simple Streamlit app. | Learn about important topics such as session state, efficient data and memory management via caching, complex layouts, and much more.|
 
 ## Prizes
 
