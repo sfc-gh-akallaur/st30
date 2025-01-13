@@ -1,2 +1,5 @@
+streamlit
 pandas
 click==8.0
+streamlit_pandas_profiling
+pandas_profiling

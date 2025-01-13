@@ -1,40 +1,30 @@
-import numpy as np
-import altair as alt
-import pandas as pd
 import streamlit as st
 
-st.header('st.write')
-st.subheader('I am subheader')
-st.markdown('##### I *am* markdown \n 2nd row')
-st.code('print("Hello world")')
-st.caption('I am caption')
-st.text('I am text')
+st.title('st.query_params')
 
-# Example 1
+with st.expander('About this app'):
+    st.write("`st.query_params` allows the retrieval of query parameters directly from the URL of the user's browser.")
 
-st.write('Hello, *World!* :sunglasses:')
+# 1. Instructions
+st.header('1. Instructions')
+st.markdown('''
+In the above URL bar of your internet browser, append the following:
+`?firstname=Jack&surname=Beanstalk`
+after the base URL `http://share.streamlit.io/dataprofessor/st.query_params/`
+such that it becomes 
+`http://share.streamlit.io/dataprofessor/st.query_params/?firstname=Jack&surname=Beanstalk`
+''')
 
-# Example 2
 
-st.write(1234)
+# 2. Contents of st.query_params
+st.header('2. Contents of st.query_params')
+st.write(st.query_params)
 
-# Example 3
 
-df = pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-})
-st.write(df)
+# 3. Retrieving and displaying information from the URL
+st.header('3. Retrieving and displaying information from the URL')
 
-# Example 4
+firstname = st.query_params['firstname']
+surname = st.query_params['surname']
 
-st.write('Below is a DataFrame:', df, 'Above is a dataframe.')
-
-# Example 5
-
-df2 = pd.DataFrame(
-    np.random.randn(200, 3),
-    columns=['a', 'b', 'c'])
-c = alt.Chart(df2).mark_circle().encode(
-    x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
-st.write(c)
+st.write(f'Hello **{firstname} {surname}**, how are you?')
