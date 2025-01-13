@@ -1,30 +1,34 @@
 import streamlit as st
+import numpy as np
+import pandas as pd
+from time import time
 
-st.title('st.query_params')
+st.title('st.cache')
 
-with st.expander('About this app'):
-    st.write("`st.query_params` allows the retrieval of query parameters directly from the URL of the user's browser.")
+# Not using cache
+a0 = time()
+st.subheader('Not using st.cache')
 
-# 1. Instructions
-st.header('1. Instructions')
-st.markdown('''
-In the above URL bar of your internet browser, append the following:
-`?firstname=Jack&surname=Beanstalk`
-after the base URL `http://share.streamlit.io/dataprofessor/st.query_params/`
-such that it becomes 
-`http://share.streamlit.io/dataprofessor/st.query_params/?firstname=Jack&surname=Beanstalk`
-''')
+@st.cache(suppress_st_warning=True)
+def load_data_a():
+    df = pd.DataFrame(
+        np.random.rand(2000000, 5),
+        columns=['a', 'b', 'c', 'd', 'e']
+    )
+    for i in range(200):
+        np.random.rand(2000000, 5)
+    return df
 
+def call_and_measure():
+    start = time()
+    st.write(load_data_a())
+    end = time()
+    st.info(end - start)
 
-# 2. Contents of st.query_params
-st.header('2. Contents of st.query_params')
-st.write(st.query_params)
+call_and_measure()
+call_and_measure()
 
+def next_page():
+    st.query_params['challenge'] = 'Day25'
 
-# 3. Retrieving and displaying information from the URL
-st.header('3. Retrieving and displaying information from the URL')
-
-firstname = st.query_params['firstname']
-surname = st.query_params['surname']
-
-st.write(f'Hello **{firstname} {surname}**, how are you?')
+st.button('Next', on_click=next_page)
