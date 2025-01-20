@@ -3,3 +3,7 @@ pandas
 click==8.0
 streamlit_pandas_profiling
 pandas_profiling
+streamlit-shap
+xgboost
+matplotlib
+scikit-learn
